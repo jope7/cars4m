@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from app.models import Car
 
@@ -7,3 +7,9 @@ from app.models import Car
 def index(request):
     cars = Car.objects.all()
     return render(request, 'index.html', {'cars':cars})
+
+def devs(request):
+    if request.user.is_authenticated:
+        return render(request, 'desenvolvedores.html')
+    
+    return redirect('/admin/login/?next=/')
