@@ -12,13 +12,16 @@
             <h1>Carrinhos</h1>
         </header>
 
-        <nav class="nav">
+        <nav class="nav container bg-white rounded text-center">
             <li class="nav-item">
-                <a href=""></a>
+                <a href="{% url 'home' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'admin:login' %}" class="nav-link">Login</a>
             </li>
         </nav>
 
-        <main class=container bg-white rounded>
+        <main class="container bg-white rounded">
             <table class="table table-striped table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr>
